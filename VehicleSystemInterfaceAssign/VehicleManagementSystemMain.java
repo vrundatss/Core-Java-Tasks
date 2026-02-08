@@ -1,6 +1,6 @@
 package com.tss.VehicleSystemInterfaceAssign;
 
-import com.tss.InheritancePractice.UtilityAccountMethods;
+import com.tss.AccountCollectionAssign.UtilityAccountMethods;
 
 import java.util.Scanner;
 
