@@ -1,6 +1,6 @@
 package com.tss.MovieManagementFileHandlingAssign;
 
-import com.tss.InheritancePractice.UtilityAccountMethods;
+import com.tss.AccountCollectionAssign.UtilityAccountMethods;
 
 import java.time.Year;
 import java.util.ArrayList;

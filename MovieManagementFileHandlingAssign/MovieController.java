@@ -1,6 +1,6 @@
 package com.tss.MovieManagementFileHandlingAssign;
 
-import com.tss.InheritancePractice.UtilityAccountMethods;
+import com.tss.AccountCollectionAssign.UtilityAccountMethods;
 
 
 public class MovieController {
