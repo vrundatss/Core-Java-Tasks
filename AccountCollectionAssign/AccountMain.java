@@ -409,7 +409,7 @@ public class AccountMain {
     }
 
     private static void saveAccountDetails(){
-        File file = new File("C:\\Users\\vrunda.chavada\\Training Projects\\Java projects\\OOP-App-TSS\\src\\com\\tss\\collectionAssign\\accountData.txt");
+        File file = new File("C:\\Users\\vrunda.chavada\\Training Projects\\Java projects\\OOP-App-TSS\\src\\com\\tss\\AccountCollectionAssign\\accountData.txt");
 
         try (FileWriter writer = new FileWriter(file)) {
             for (Account account : accounts) {
@@ -427,7 +427,7 @@ public class AccountMain {
     }
 
     private static void loadAccountDetails() {
-        File file = new File("C:\\Users\\vrunda.chavada\\Training Projects\\Java projects\\OOP-App-TSS\\src\\com\\tss\\collectionAssign\\accountData.txt");
+        File file = new File("C:\\Users\\vrunda.chavada\\Training Projects\\Java projects\\OOP-App-TSS\\src\\com\\tss\\AccountCollectionAssign\\accountData.txt");
         if (!file.exists()) {
             System.out.println("\nNo saved account data found...");
             return;

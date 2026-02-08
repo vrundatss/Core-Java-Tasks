@@ -12,21 +12,23 @@ public class UtilityAccountMethods {
 
         while (true) {
             System.out.print("Enter Start year (between 1960 and " + currentYear + "): ");
+
             if (!scanner.hasNextInt()) {
                 System.out.println("Invalid input! Please enter a valid numeric year.");
                 scanner.next();
                 continue;
             }
 
-            scanner.nextLine();
             year = scanner.nextInt();
             if (year >= 1960 && year <= currentYear) {
+                scanner.nextLine();
                 return year;
             } else {
                 System.out.println("Invalid year. Please enter a year between 1960 and " + currentYear + ".");
             }
         }
     }
+
 
     public static double getValidAmount(String msg) {
         double amount;
@@ -74,5 +76,6 @@ public class UtilityAccountMethods {
             System.out.print("Enter valid positive integer: ");
         }
     }
+
 
 }

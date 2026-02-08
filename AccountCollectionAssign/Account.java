@@ -1,6 +1,6 @@
 package com.tss.AccountCollectionAssign;
 
-import com.tss.ExceptionHandlingAssign.exceptions.NegativeAmountException;
+import com.tss.ExceptionHandlingAssign.exceptions.*;
 
 import java.util.*;
 
@@ -56,7 +56,7 @@ public abstract class Account {
         return id;
     }
 
-    public long getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
@@ -88,9 +88,6 @@ public abstract class Account {
         return trasactions;
     }
 
-    public void setTrasactions(List<Transaction> trasactions) {
-        this.trasactions = trasactions;
-    }
 
     public abstract void deposit(Double amount) throws NegativeAmountException;
 
