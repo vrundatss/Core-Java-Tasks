@@ -1,4 +1,4 @@
-package com.tss.ExceptionAssign.exceptions;
+package com.tss.ExceptionHandlingAssign.exceptions;
 
 public class MinimumBalanceException extends RuntimeException{
     public  static final double MIN_BALANCE = 500;

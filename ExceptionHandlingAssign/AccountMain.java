@@ -1,7 +1,7 @@
-package com.tss.ExceptionAssign;
+package com.tss.ExceptionHandlingAssign;
 
-import com.tss.InheritancePractice.UtilityAccountMethods;
-import com.tss.ExceptionAssign.exceptions.NegativeAmountException;
+import com.tss.AccountCollectionAssign.UtilityAccountMethods;
+import com.tss.ExceptionHandlingAssign.exceptions.*;
 
 import java.util.Scanner;
 
@@ -157,7 +157,7 @@ public class AccountMain {
     }
 
     private static void depositAmount() {
-        Account account = UtilityAccountMethods.findAccountByAccountNumber();
+        Account account = findAccountByAccountNumber();
         if (account == null) return;
         double amount = 0;
         try{
@@ -175,7 +175,7 @@ public class AccountMain {
     }
 
     private static void withdrawAmount() {
-        Account account = UtilityAccountMethods.findAccountByAccountNumber();
+        Account account = findAccountByAccountNumber();
         if (account == null) return;
 
         double amount = 0;
@@ -194,7 +194,7 @@ public class AccountMain {
     }
 
     private static void showBalance() {
-        Account account = UtilityAccountMethods.findAccountByAccountNumber();
+        Account account = findAccountByAccountNumber();
         if (account == null) return;
 
         System.out.println("Current Balance: Rs. " + account.getBalance());
@@ -202,11 +202,11 @@ public class AccountMain {
 
     private static void transferMoney() {
         System.out.println("From Account (Sender) ==>");
-        Account senderAccount = UtilityAccountMethods.findAccountByAccountNumber();
+        Account senderAccount = findAccountByAccountNumber();
         if (senderAccount == null) return;
 
         System.out.println("To Account (Receiver) ==>");
-        Account receiverAccount = UtilityAccountMethods.findAccountByAccountNumber();
+        Account receiverAccount = findAccountByAccountNumber();
         if (receiverAccount == null) return;
 
         double amount = UtilityAccountMethods.getValidAmount("Enter amount to transfer : ");
@@ -224,7 +224,7 @@ public class AccountMain {
     }
 
     private static void displayAccountDetails() {
-        Account account = UtilityAccountMethods.findAccountByAccountNumber();
+        Account account = findAccountByAccountNumber();
         if (account != null)
         {
             System.out.printf("| %-5s | %-10s | %-15s | %-10s | %-12s |\n",
@@ -254,6 +254,18 @@ public class AccountMain {
     }
 
 
+    public static Account findAccountByAccountNumber() {
+        System.out.print("Enter Account Number : ");
+        int accountNumber = UtilityAccountMethods.readPositiveNumber();
+        for (int i = 0; i < accountCount; i++) {
+            if (accounts[i] != null && accounts[i].getId() == accountNumber) {
+                return accounts[i];
+            }
+        }
+
+        System.out.println("Account with number " + accountNumber + " not found!");
+        return null;
+    }
 }
 
 

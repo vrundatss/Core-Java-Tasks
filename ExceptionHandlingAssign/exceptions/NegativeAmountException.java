@@ -1,4 +1,4 @@
-package com.tss.ExceptionAssign.exceptions;
+package com.tss.ExceptionHandlingAssign.exceptions;
 
 public class NegativeAmountException extends RuntimeException{
     private double amount;

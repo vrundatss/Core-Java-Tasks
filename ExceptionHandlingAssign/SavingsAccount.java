@@ -1,4 +1,4 @@
-package com.tss.ExceptionAssign;
+package com.tss.ExceptionHandlingAssign;
 
 import java.util.Random;
 
