@@ -1,11 +1,11 @@
-package com.tss.AccountSystemInheritanceAssign.main;
+package com.tss.InsurancePolicySystemInheritanceAssign.main;
 
-import com.tss.AccountSystemInheritanceAssign.model.HealthInsurancePolicy;
-import com.tss.AccountSystemInheritanceAssign.model.LifeInsurancePolicy;
-import com.tss.AccountSystemInheritanceAssign.model.VehicleInsurancePolicy;
-import com.tss.InheritancePractice.UtilityAccountMethods;
+import com.tss.InsurancePolicySystemInheritanceAssign.model.HealthInsurancePolicy;
+import com.tss.InsurancePolicySystemInheritanceAssign.model.LifeInsurancePolicy;
+import com.tss.InsurancePolicySystemInheritanceAssign.model.VehicleInsurancePolicy;
+import com.tss.AccountCollectionAssign.UtilityAccountMethods;
 
-import com.tss.AccountSystemInheritanceAssign.model.InsurancePolicy;
+import com.tss.InsurancePolicySystemInheritanceAssign.model.InsurancePolicy;
 
 import java.time.Year;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.tss.AccountSystemInheritanceAssign.model;
+package com.tss.InsurancePolicySystemInheritanceAssign.model;
 
 import java.util.Random;
 import java.time.Year;
