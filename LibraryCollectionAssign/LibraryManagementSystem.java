@@ -18,8 +18,7 @@ public class LibraryManagementSystem {
     private static List<Member> members;
     Book book;
     Member member;
-//    public static List<Book> library = new ArrayList<>();
-public static Library library = new Library();
+    public static Library library = new Library();
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws InvalidMemberException, InvalidBookException, BookAlreadyBorrowedException {

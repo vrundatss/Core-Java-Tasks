@@ -17,8 +17,6 @@ public class Library {
     List<Book> books = new ArrayList<>();
     List<Member> members = new ArrayList<>();
 
-//    Map<Integer , LinkedHashSet<Book>> totalBooks = new HashMap<>();
-
     Map<Integer , Book> bookIdMap = new HashMap<>();
     Map<Integer , Member> memberIdMap = new HashMap<>();
 

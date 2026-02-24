@@ -8,7 +8,7 @@ public class MovieManager{
 
     private static final int MAX_MOVIES = 5;
     private static final String SERIAL_FILE = "movie.ser";
-    private static final String TEXT_FILE = "C:\\Users\\vrunda.chavada\\Training Projects\\Java projects\\OOP-App-TSS\\src\\com\\tss\\fileHandlingAssign\\MovieData\\data.txt";
+    private static final String TEXT_FILE = "C:\\Users\\vrunda.chavada\\Training Projects\\Java projects\\OOP-App-TSS\\src\\com\\tss\\MovieManagementFileHandlingAssign\\MovieData\\data.txt";
 
     private static ArrayList<Movie> movies;
     private final Scanner scanner = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class MovieManager{
     public void addMovie(Movie movie) throws CapacityFullException {
         if (movies.size() < MAX_MOVIES) {
             movies.add(movie);
-//            saveMovie();
+            saveMovie();
             System.out.println("Movie added successfully with Movie ID: " + movie.getId());
         } else {
             throw new CapacityFullException("Limit Reached! Only " + MAX_MOVIES + " movies allowed.");
@@ -144,131 +144,36 @@ public class MovieManager{
 
     public void displayMovies() {
         if (movies != null && !movies.isEmpty()) {
-            System.out.println("Loaded Movies:");
-            System.out.println("--------------------------------");
+            System.out.println("===============================================");
+            System.out.println("                   MOVIE LIST                 ");
+            System.out.println("===============================================");
+            System.out.printf("%-5s %-20s %-10s %-15s%n",
+                    "ID", "NAME", "YEAR", "GENRE");
+            System.out.println("-----------------------------------------------");
+
             for (Movie m : movies) {
-                System.out.println(m);
+                System.out.printf("%-5d %-20s %-10d %-15s%n",
+                        m.getId(),
+                        m.getName(),
+                        m.getYear(),
+                        m.getGenre());
             }
-            System.out.println("--------------------------------");
+
+            System.out.println("-----------------------------------------------");
         } else {
             System.out.println("No movies to display!");
         }
     }
+//    public void displayMovies() {
+//        if (movies != null && !movies.isEmpty()) {
+//            System.out.println("Loaded Movies:");
+//            System.out.println("--------------------------------");
+//            for (Movie m : movies) {
+//                System.out.println(m);
+//            }
+//            System.out.println("--------------------------------");
+//        } else {
+//            System.out.println("No movies to display!");
+//        }
+//    }
 }
-
-
-
-//package com.tss.fileHandlingAssign;
-//import com.tss.InheritancePractice.UtilityAccountMethods;
-//
-//import java.io.*;
-//import java.util.ArrayList;
-//import java.util.Scanner;
-//
-//
-//public class MovieManager implements Serializable {
-//
-//    private static final int MAX_MOVIES = 5;
-//    Scanner scanner = new Scanner(System.in);
-//
-//    private static ArrayList<Movie> movies;
-//
-//    static final String fileName = "C:\\Users\\vrunda.chavada\\Training Projects\\Java projects\\OOP-App-TSS\\src\\com\\tss\\fileHandlingAssign\\MovieData\\data.txt";
-//
-//    public MovieManager(ArrayList<Movie> movies) {
-//        this.movies = new ArrayList<>();
-//    }
-//
-//    public void addMovie(Movie movie){
-//        if(movies.size() < MAX_MOVIES) {
-//            movies.add(movie);
-//            saveMovie();
-//            System.out.println("Movie added successfully with Movie ID : "  +movie.getId() );
-//        }else {
-//            System.out.println("Limit Reached...Only "+ MAX_MOVIES +" moives can be added...");
-//        }
-//    }
-//
-//    public void clearMovies(){
-//        movies.clear();
-//    }
-//
-//    public ArrayList<Movie> getMovies() {
-//        return movies;
-//    }
-//
-//    public static Movie getMovieId(){
-//        System.out.print("Enter Moive ID :");
-//        int id = UtilityAccountMethods.readPositiveNumber();
-//        Movie movie = movies.get(id);
-//
-//        return movie;
-//    }
-//
-//    public void loadMovie(){
-//        if(movies.size() <= MAX_MOVIES) {
-//            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("movie.ser"))) {
-//                for (int i = 0; i < movies.size(); i++) {
-//                    Movie movie = (Movie) ois.readObject();
-////                System.out.println(movie);
-//                }
-//                System.out.println("Object De-serialized successfully!");
-//
-//                if (movies != null && !movies.isEmpty()) {
-//                    System.out.println("Loaded Movies:");
-//                    for (Movie m : movies) {
-//                        System.out.println(m);
-//                    }
-//                } else {
-//                    System.out.println("No Movies Found!!!...Add movie first...");
-//                }
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-//
-//    }
-//
-//    public void saveMovie(){
-//
-//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("movie.ser"))) {
-//
-//            for (int i = 0; i < movies.size(); i++){
-//                oos.writeObject(movies.get(i));
-//            }
-//
-//            System.out.println("Object serialized successfully!");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
-//            for (Movie movie : movies) {
-//                bw.write(movie.getId() + "," + movie.getName() + "," + movie.getYear() + "," + movie.getGenre());
-//                bw.newLine();
-//            }
-//            System.out.println("Movie details saved in data.txt");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    public void deleteAllMovies(){
-//        clearMovies();
-//
-//        try (FileWriter fw = new FileWriter(fileName)) {
-//
-//                String line = " ";
-//
-//                fw.write(line);
-//
-//            System.out.println("All movies deleted successfully.");
-//        } catch (IOException e) {
-//            System.out.println("Error while deleting file: " + e.getMessage());
-//        }
-//    }
-//
-//}

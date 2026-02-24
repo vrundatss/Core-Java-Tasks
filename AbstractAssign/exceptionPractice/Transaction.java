@@ -1,4 +1,6 @@
-package com.tss.AccountCollectionAssign;
+package com.tss.AbstractAssign.exceptionPractice;
+
+import com.tss.AccountCollectionAssign.TrasactionType;
 
 import java.util.HashSet;
 import java.util.Random;

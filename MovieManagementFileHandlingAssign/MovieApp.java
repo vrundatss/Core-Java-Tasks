@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class MovieApp {
     static Scanner scanner = new Scanner(System.in);
 
-    private static ArrayList<Movie> movies;
     static MovieManager movieManager = new MovieManager();
     static MovieController movieController = new MovieController(movieManager);
     public static void main(String[] args) throws NoSuchMovieFoundException {
